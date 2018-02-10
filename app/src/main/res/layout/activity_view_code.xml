@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="kedr.emam.ahmad.scan.ViewCode"
+    android:orientation="horizontal">
+    <TextView
+        android:layout_marginTop="50dp"
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="150dp" />
+    <EditText
+        android:hint="@string/product_n1ame"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="@string/enert_you_quantity" />
+
+</LinearLayout>
