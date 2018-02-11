@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">Scan</string>
     <string name="scan_using_camera">Scan using camera</string>
-    <string name="product_n1ame">Product N1ame</string>
-    <string name="enert_you_quantity">Enert you quantity</string>
+    <string name="product_n1ame">Product Name: </string>
+    <string name="enert_you_quantity">Enter you quantity</string>
+    <string name="barcode_info">Barcode info</string>
+    <string name="item_code">Item Code: </string>
+    <string name="product_name">Product Name: </string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
 </resources>
