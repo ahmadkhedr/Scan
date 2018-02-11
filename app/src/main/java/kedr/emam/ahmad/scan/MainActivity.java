@@ -20,5 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void show(View view) {
         //use to show the user the items in the data base
+        Intent e = new Intent(this,ViewData.class);
+        startActivity(e);
     }
 }

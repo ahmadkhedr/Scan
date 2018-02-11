@@ -22,7 +22,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Camera" />
-        <activity android:name=".ViewCode"></activity>
+        <activity android:name=".ViewCode" />
+        <activity android:name=".ViewData"></activity>
     </application>
 
 </manifest>

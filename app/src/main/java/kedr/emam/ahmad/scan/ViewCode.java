@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ViewCode extends AppCompatActivity {
  private TextView text,itemcode,proname,nuum;
@@ -41,6 +42,7 @@ public class ViewCode extends AppCompatActivity {
         row.put("name",namo);
         row.put("num",number);
         db.insert("Data",null,row);
+        Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
     }
 
     public void Cancel(View view) {
