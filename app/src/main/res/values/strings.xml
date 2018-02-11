@@ -8,4 +8,6 @@
     <string name="product_name">Product Name: </string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
+    <string name="show_items">Show Items</string>
+    <string name="quantity">Quantity:</string>
 </resources>

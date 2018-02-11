@@ -17,4 +17,8 @@ public class MainActivity extends AppCompatActivity {
         Intent a = new Intent(this,Camera.class);
         startActivity(a);
     }
+
+    public void show(View view) {
+        //use to show the user the items in the data base
+    }
 }
