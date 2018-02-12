@@ -6,9 +6,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="kedr.emam.ahmad.scan.ViewData">
-    <TextView
-        android:id="@+id/etView"
+    <ListView
+        android:id="@+id/ListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+    </ListView>
 
 </LinearLayout>

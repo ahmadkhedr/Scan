@@ -15,6 +15,7 @@ public class ViewCode extends AppCompatActivity {
  private EditText name,num;
  private String ok;
  private MyHelper helper;
+ private Integer  cc;
  private SQLiteDatabase db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,14 +32,18 @@ public class ViewCode extends AppCompatActivity {
 
         Intent d = getIntent();
          ok = d.getStringExtra("number");
-        text.setText(ok);
+
+        text.setText(ok );
     }
 
     public void save(View view) {
         //code to save the data in the Sqlite data base then see it beside other products in a table
+        String code = text.getText().toString();
         String namo = name.getText().toString();
         int number = Integer.parseInt(num.getText().toString());
+
         ContentValues row = new ContentValues();
+        row.put("code",code);
         row.put("name",namo);
         row.put("num",number);
         db.insert("Data",null,row);
