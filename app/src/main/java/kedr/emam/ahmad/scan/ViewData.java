@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 public class ViewData extends AppCompatActivity {
     private ListView ListView;
-    private  String[] emam = {"id"};
+    private  String[] emam ={" "};
 private TextView etView;
 private MyHelper helper;
 private SQLiteDatabase db;
@@ -56,13 +56,13 @@ private SQLiteDatabase db;
             while( pointer.moveToNext()){
                 name = pointer.getString(2);
                 TextView tvName = (TextView) v.findViewById(R.id.tvName);
-                tvName.setText(name);
+                tvName.setText("Product name: " + name);
                code = pointer.getString(1);
                 TextView tvcode = (TextView) v.findViewById(R.id.tvcode);
-                tvcode.setText(code);
+                tvcode.setText("Bar code: " + code);
                 num = pointer.getString(3);
                 TextView tvnumer = (TextView) v.findViewById(R.id.tvnumer);
-                tvnumer.setText(num);
+                tvnumer.setText("quantity: "+ num);
 
             }
 
