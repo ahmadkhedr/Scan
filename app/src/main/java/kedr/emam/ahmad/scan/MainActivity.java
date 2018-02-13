@@ -23,4 +23,9 @@ public class MainActivity extends AppCompatActivity {
         Intent e = new Intent(this,ViewData.class);
         startActivity(e);
     }
+
+    public void Email(View view) {
+        Intent e = new Intent(this,Email.class);
+        startActivity(e);
+    }
 }
