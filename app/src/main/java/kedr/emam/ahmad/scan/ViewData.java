@@ -16,13 +16,16 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class ViewData extends AppCompatActivity {
     private ListView ListView;
     private  String[] emam ={" "};
 private TextView etView;
 private MyHelper helper;
 private SQLiteDatabase db;
-
+   String[] listData;
+    private static final String TAG = "ListDataActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +56,7 @@ private SQLiteDatabase db;
             String code = " ";
             String name = " ";
             String num = " ";
+
             while( pointer.moveToNext()){
                 name = pointer.getString(2);
                 TextView tvName = (TextView) v.findViewById(R.id.tvName);
