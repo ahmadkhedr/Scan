@@ -23,7 +23,8 @@
         </activity>
         <activity android:name=".Camera" />
         <activity android:name=".ViewCode" />
-        <activity android:name=".ViewData"></activity>
+        <activity android:name=".ViewData" />
+        <activity android:name=".Inventory"></activity>
     </application>
 
 </manifest>

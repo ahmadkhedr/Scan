@@ -23,4 +23,9 @@ public class MainActivity extends AppCompatActivity {
         Intent e = new Intent(this,ViewData.class);
         startActivity(e);
     }
+
+    public void enter(View view) {
+        Intent o = new Intent(this,Inventory.class);
+        startActivity(o);
+    }
 }

@@ -21,9 +21,20 @@
         />
     <Button
         android:layout_marginTop="10dp"
-        android:text="@string/show_items"
+        android:text="Inventory"
         android:textSize="20sp"
         android:layout_below="@id/scan"
+        android:id="@+id/manual"
+        android:onClick="enter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_gray"
+        />
+    <Button
+        android:layout_marginTop="10dp"
+        android:text="@string/show_items"
+        android:textSize="20sp"
+        android:layout_below="@id/manual"
         android:id="@+id/show"
         android:onClick="show"
         android:layout_width="match_parent"
