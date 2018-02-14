@@ -41,14 +41,7 @@ MyHelper myHelper;
         myHelper = new MyHelper(this);
         sqldb = myHelper.getWritableDatabase();//you missed this line..
         c = null;
-        for (int i = 0; i < 10; i++) {
-            ContentValues row = new ContentValues();
-            row.put("name", "a" + i);
-            row.put("num", "n" + i);
-            row.put("code", "c" + i);
-            sqldb.insert("Data", null, row);
 
-        }
         edEmail = findViewById(R.id.edEmail);
     }
 
