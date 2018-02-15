@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
@@ -14,7 +15,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.zxing.Result;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
@@ -33,7 +33,7 @@ public class Camera extends AppCompatActivity implements ZXingScannerView.Result
         scannerView = new ZXingScannerView(this);
         setContentView(scannerView);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             if (checkPermission()) {
                 Toast.makeText(this, "Premission granted", Toast.LENGTH_LONG).show();
             } else {
@@ -51,6 +51,7 @@ public class Camera extends AppCompatActivity implements ZXingScannerView.Result
         ActivityCompat.requestPermissions(this, new String[]{CAMERA}, Request_Camera);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     private void onRequestPermissionResult(int requestCode, String[] permission, int[] grantResults) {
         switch (requestCode) {
             case Request_Camera:
@@ -61,13 +62,13 @@ public class Camera extends AppCompatActivity implements ZXingScannerView.Result
                         Toast.makeText(getApplicationContext(), "Permission Granted, Now you can access camera", Toast.LENGTH_LONG).show();
                     } else {
                         Toast.makeText(getApplicationContext(), "Permission Denied, You cannot access and camera", Toast.LENGTH_LONG).show();
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                             if (shouldShowRequestPermissionRationale(CAMERA)) {
                                 showMessageOKCancel("You need to allow access to both the permissions",
                                         new DialogInterface.OnClickListener() {
                                             @Override
                                             public void onClick(DialogInterface dialog, int which) {
-                                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                                                     requestPermissions(new String[]{CAMERA},
                                                             Request_Camera);
                                                 }
@@ -96,7 +97,7 @@ public class Camera extends AppCompatActivity implements ZXingScannerView.Result
         super.onResume();
 
         int currentapiVersion = android.os.Build.VERSION.SDK_INT;
-        if (currentapiVersion >= android.os.Build.VERSION_CODES.M) {
+        if (currentapiVersion >= Build.VERSION_CODES.JELLY_BEAN) {
             if (checkPermission()) {
                 if (scannerView == null) {
                     scannerView = new ZXingScannerView(this);
