@@ -31,7 +31,7 @@ public class Inventory extends AppCompatActivity {
         db =helper.getWritableDatabase();
     }
 
-    public void save(View view) {
+    public void save2(View view) {
         String code = text.getText().toString();
         String namo = name.getText().toString();
         int number = Integer.parseInt(num.getText().toString());
@@ -46,7 +46,7 @@ public class Inventory extends AppCompatActivity {
         startActivity(w);
     }
 
-    public void Cancel(View view) {
+    public void Cancel2(View view) {
         Intent w = new Intent(this,MainActivity.class);
         startActivity(w);
     }

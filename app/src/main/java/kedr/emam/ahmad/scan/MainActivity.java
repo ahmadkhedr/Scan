@@ -28,4 +28,11 @@ public class MainActivity extends AppCompatActivity {
         Intent e = new Intent(this,Email.class);
         startActivity(e);
     }
+
+
+
+    public void invent(View view) {
+        Intent xx = new Intent(this,Inventory.class);
+        startActivity(xx);
+    }
 }

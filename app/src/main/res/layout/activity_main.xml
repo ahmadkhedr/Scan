@@ -21,11 +21,11 @@
         />
     <Button
         android:layout_marginTop="10dp"
-        android:text="Inventory"
+        android:text="@string/inventory"
         android:textSize="20sp"
         android:layout_below="@id/scan"
         android:id="@+id/manual"
-        android:onClick="enter"
+        android:onClick="invent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/dark_gray"

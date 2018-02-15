@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class ViewData extends AppCompatActivity {
     private ListView ListView;
-    private  String[] emam ={" "};
+    private  String[] emam = {" "};
 private TextView etView;
 private MyHelper helper;
 private SQLiteDatabase db;

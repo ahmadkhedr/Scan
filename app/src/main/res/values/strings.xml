@@ -17,4 +17,5 @@
     <string name="OK">OK</string>
     <string name="quantity">Quantity:</string>
     <string name="title_activity_inventory">Inventory</string>
+    <string name="inventory">Inventory</string>
 </resources>
