@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/gray"
+    android:background="@color/colorPrimary"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="kedr.emam.ahmad.scan.MainActivity"
@@ -12,12 +12,12 @@
 
         android:text="@string/scan_using_camera"
         android:textSize="20sp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="180dp"
         android:id="@+id/scan"
         android:onClick="can"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/dark_gray"
+        android:background="@color/Orange"
         />
     <Button
         android:layout_marginTop="10dp"
@@ -28,8 +28,7 @@
         android:onClick="invent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/dark_gray"
-        />
+        android:background="@color/Orange"        />
     <Button
         android:layout_marginTop="10dp"
         android:text="@string/show_items"
@@ -39,8 +38,7 @@
         android:onClick="show"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/dark_gray"
-        />
+        android:background="@color/Orange"        />
 
     <Button
         android:id="@+id/send"
@@ -49,7 +47,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/show"
         android:layout_marginTop="14dp"
-        android:background="@color/dark_gray"
+        android:background="@color/Orange"
         android:onClick="Email"
         android:text="@string/Email"
         android:textSize="20sp"

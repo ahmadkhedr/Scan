@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="kedr.emam.ahmad.scan.ViewCode"
-    android:background="@color/gray"
+    android:background="@color/colorPrimary"
     android:orientation="vertical">
 
     <TextView
@@ -20,7 +20,7 @@
         android:hint="@string/barcode_info"
         android:layout_below="@id/itemcode"
         android:id="@+id/text"
-        android:background="@color/dark_gray"
+        android:background="@color/Orange"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="50dp" />
@@ -37,7 +37,7 @@
         android:layout_below="@id/proname"
         android:gravity="center"
         android:id="@+id/name"
-        android:background="@color/dark_gray"
+        android:background="@color/Orange"
         android:hint="@string/product_n1ame"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -58,7 +58,7 @@
         android:id="@+id/num"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/dark_gray"
+        android:background="@color/Orange"
         android:hint="@string/enert_you_quantity"
         android:inputType="number" />
     <Button
@@ -69,6 +69,7 @@
         android:onClick="save"
         android:id="@+id/btnSave"
         android:text="@string/save"
+        android:background="@color/Orange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignRight="@id/num" />
@@ -80,6 +81,7 @@
         android:onClick="Cancel"
         android:id="@+id/btnCancel"
         android:text="@string/cancel"
+        android:background="@color/Orange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 

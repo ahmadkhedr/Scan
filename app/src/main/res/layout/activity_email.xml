@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context="kedr.emam.ahmad.scan.Email">
 
     <RelativeLayout
@@ -35,6 +36,7 @@
             android:layout_below="@+id/edEmail"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="64dp"
+            android:background="@color/Orange"
             android:onClick="Convandsend"
             android:text="Convert / Send"
             tools:ignore="OnClick" />
