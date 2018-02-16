@@ -19,12 +19,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ViewData extends AppCompatActivity {
     private ListView ListView;
-    private  String[] name;
-    private  String[] code;
-    private  String[] num;
+    private  ArrayList<String> name;
+    private ArrayList<String> code;
+    private ArrayList<String> num;
 private TextView etView;
 private MyHelper helper;
 private SQLiteDatabase db;
@@ -41,33 +42,41 @@ private SQLiteDatabase db;
         String[]  ok = {"id","code","name","num"};
         pointer = db.query("Data",ok,null,null,null,null,null,null);
         Toast.makeText(this, "Rows = "+pointer.getCount(), Toast.LENGTH_SHORT).show();
-        name = new String[pointer.getCount()];
-        code = new String[pointer.getCount()];
-        num = new String[pointer.getCount()];
-        int i=0;
+        name = new ArrayList<String>();
+        code = new ArrayList<String>();
+        num = new ArrayList<String>();
+
         while( pointer.moveToNext()){
 
-            name[i] = pointer.getString(2);
+            name.add(pointer.getString(2));
 
-            code[i] = pointer.getString(1);
+            code.add(pointer.getString(1));
 
-            num[i] =  pointer.getString(3);
+            num.add( pointer.getString(3));
 
-            i++;
+
         }
+        Collections.reverse(name);
+        Collections.reverse(code);
+        Collections.reverse(num);
+        ArrayList<ArrayModel> adapt = new ArrayList<ArrayModel>();
+        myadapter adapter = new myadapter(this,adapt);
 
+for (int i =0; i <name.size(); i++){
 
+    ArrayModel model = new ArrayModel(name.get(i),code.get(i),num.get(i));
+    adapter.add(model);
 
-
+}
         ListView = (ListView) findViewById(R.id.ListView);
-        myadapter adapter = new myadapter(this,name);
+
         ListView.setAdapter(adapter);
 
 
     }
-    public  class myadapter extends ArrayAdapter<String> {
+    public  class myadapter extends ArrayAdapter<ArrayModel> {
 
-        public myadapter(@NonNull Context context,@NonNull String[] objects) {
+        public myadapter(@NonNull Context context,@NonNull ArrayList<ArrayModel> objects) {
             super(context, 0, objects);
         }
 
@@ -77,15 +86,15 @@ private SQLiteDatabase db;
             //WE CREATE THIS INFLATER TO INFLATE OUR NEW XML DESIGN TO THE ACTIVITY
             LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
             View v =  inflater.inflate(R.layout.customlist,parent,false);
-
+ArrayModel model = getItem(position);
             TextView tvName = (TextView) v.findViewById(R.id.tvName);
-            tvName.setText("Product name: " + name[position]);
+            tvName.setText("Product name: " + model.name);
 
             TextView tvcode = (TextView) v.findViewById(R.id.tvcode);
-            tvcode.setText("Bar code: " + code[position]);
+            tvcode.setText("Bar code: " + model.code);
 
             TextView tvnumer = (TextView) v.findViewById(R.id.tvnumer);
-            tvnumer.setText("number: "+ num[position]);
+            tvnumer.setText("Quantity: "+ model.num);
 
             return v;
         }
