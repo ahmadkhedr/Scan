@@ -123,7 +123,7 @@ public class Camera extends AppCompatActivity implements ZXingScannerView.Result
         Intent b = new Intent(this,ViewCode.class);
         b.putExtra("number",myResult);
         startActivity(b);
-
+this.finish();
 
 
     }

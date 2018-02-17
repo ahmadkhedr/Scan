@@ -10,12 +10,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class MyHelper extends SQLiteOpenHelper {
     public MyHelper(Context context) {
-        super(context, "Items", null, 1);
+        super(context, "Items", null, 2);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table Data(id integer primary key autoincrement,name varchar(30),quantity integer,code integer)");
+        db.execSQL("create table Data(id integer primary key autoincrement,name varchar(50),quantity varchar(50) ,code varchar(50))");
     }
 
     @Override

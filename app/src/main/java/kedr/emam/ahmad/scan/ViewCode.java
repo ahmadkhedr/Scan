@@ -22,7 +22,7 @@ public class ViewCode extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_code);
         text =findViewById(R.id.text);
-     
+
         name =findViewById(R.id.name);
         num =findViewById(R.id.num);
         helper = new MyHelper(this);
@@ -38,20 +38,74 @@ public class ViewCode extends AppCompatActivity {
         //code to save the data in the Sqlite data base then see it beside other products in a table
         String code = text.getText().toString();
         String namo = name.getText().toString();
-        int number = Integer.parseInt(num.getText().toString());
+        String number = num.getText().toString();
 
         ContentValues row = new ContentValues();
         row.put("code",code);
         row.put("name",namo);
         row.put("quantity",number);
-        db.insert("Data",null,row);
-        Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
-        Intent ww = new Intent(this,ViewData.class);
-        startActivity(ww);
+        if(Checkempty()==1) {
+            int a = (int) db.insert("Data", null, row);
+            if (a > -1) {//code to save the data in the Sqlite database then see it beside other products in a table
+                Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
+                Intent ww = new Intent(this, ViewData.class);
+                startActivity(ww);
+                this.finish();
+            } else {//if no insert
+                Toast.makeText(this, "Not Saved = " + a, Toast.LENGTH_SHORT).show();
+
+            }
+        }
+        else
+        {
+            Toast.makeText(this, "Something_empty", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void Cancel(View view) {
-        Intent c = new Intent(this,Camera.class);
-        startActivity(c);
+
+        this.finish();
     }
+
+    public void saveandscan(View view) {
+
+        //code to save the data in the Sqlite database then see it beside other products in a table
+        String code = text.getText().toString();
+        String namo = name.getText().toString();
+        String number = num.getText().toString();
+
+        ContentValues row = new ContentValues();
+        row.put("code",code);
+        row.put("name",namo);
+        row.put("quantity",number);
+        int a = (int) db.insert("Data",null,row);
+         if (Checkempty()==1) {
+            if (a > -1) { //if insert done
+        Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
+        Intent ww = new Intent(this, Camera.class);
+        startActivity(ww);
+        this.finish();
+        } else { //if no insert
+        Toast.makeText(this, "Not Saved = " + a, Toast.LENGTH_SHORT).show();
+        }
 }
+      else {
+             Toast.makeText(this, "Something_empty", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    public int Checkempty() {
+        if (text.getText().toString().isEmpty() || name.getText().toString().isEmpty() || num.getText().toString().isEmpty()) {
+
+            return 0;
+        }
+        else {
+
+            return 1;
+        }
+    }
+
+    }
+
+

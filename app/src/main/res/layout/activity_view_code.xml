@@ -68,10 +68,10 @@
             android:id="@+id/btnSave"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:layout_alignEnd="@+id/num"
-            android:layout_alignRight="@+id/num"
-            android:layout_below="@+id/num"
-            android:layout_marginTop="24dp"
+            android:layout_below="@+id/SaveandScan"
+            android:layout_marginTop="12dp"
+            android:layout_toEndOf="@+id/SaveandScan"
+            android:layout_toRightOf="@+id/SaveandScan"
             android:background="@drawable/clicked_button"
             android:gravity="center"
             android:onClick="save"
@@ -94,5 +94,18 @@
             app:layout_constraintBottom_toBottomOf="@+id/btnSave"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-</RelativeLayout>
+
+        <Button
+            android:id="@+id/SaveandScan"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/num"
+            android:layout_marginTop="13dp"
+            android:layout_toEndOf="@+id/btnCancel"
+            android:layout_toRightOf="@+id/btnCancel"
+            android:background="@drawable/clicked_button"
+            android:text="@string/SaveandScan"
+            android:onClick="saveandscan"
+            tools:text="@string/SaveandScan" />
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

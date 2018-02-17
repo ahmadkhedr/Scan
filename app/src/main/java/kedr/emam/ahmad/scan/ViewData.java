@@ -105,4 +105,10 @@ ArrayModel model = getItem(position);
         super.onDestroy();
         Log.d("taa","Destroyed");
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
+    }
 }
