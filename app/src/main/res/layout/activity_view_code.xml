@@ -75,7 +75,7 @@
             android:layout_marginTop="12dp"
             android:layout_toEndOf="@+id/SaveandScan"
             android:layout_toRightOf="@+id/SaveandScan"
-            android:background="@drawable/clicked_button"
+            android:background="@drawable/button_background2"
             android:gravity="center"
             android:onClick="save"
             android:text="@string/save" />
@@ -89,7 +89,7 @@
             android:layout_alignBottom="@+id/btnSave"
             android:layout_alignLeft="@+id/num"
             android:layout_alignStart="@+id/num"
-            android:background="@drawable/clicked_button"
+            android:background="@drawable/button_background2"
             android:gravity="center"
             android:onClick="Cancel"
             android:text="@string/cancel"
@@ -106,7 +106,7 @@
             android:layout_marginTop="13dp"
             android:layout_toEndOf="@+id/btnCancel"
             android:layout_toRightOf="@+id/btnCancel"
-            android:background="@drawable/clicked_button"
+            android:background="@drawable/button_background2"
             android:text="@string/SaveandScan"
             android:onClick="saveandscan"
             tools:text="@string/SaveandScan" />

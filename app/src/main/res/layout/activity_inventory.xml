@@ -15,11 +15,12 @@
         android:layout_marginEnd="11dp"
         android:layout_marginStart="11dp"
         android:layout_marginTop="32dp"
+        android:background="@drawable/layoutbackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/layoutbackground">
+        app:layout_constraintTop_toTopOf="parent">
 
         <EditText
             android:id="@+id/text"
@@ -71,7 +72,7 @@
             android:layout_alignRight="@+id/num"
             android:layout_below="@+id/num"
             android:layout_marginTop="23dp"
-            android:background="@drawable/clicked_button"
+            android:background="@drawable/button_background2"
             android:gravity="center"
             android:onClick="save"
             android:text="@string/save" />
@@ -84,7 +85,7 @@
             android:layout_alignLeft="@+id/num"
             android:layout_alignStart="@+id/num"
             android:layout_alignTop="@+id/btnSave"
-            android:background="@drawable/clicked_button"
+            android:background="@drawable/button_background2"
             android:gravity="center"
             android:onClick="Cancel"
             android:text="@string/cancel" />

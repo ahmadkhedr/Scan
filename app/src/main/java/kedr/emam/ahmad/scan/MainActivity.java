@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void ShowExitAlert(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-        alertDialogBuilder.setMessage("Are you sure,You wanted to Exit ? ");
+        alertDialogBuilder.setMessage("Are you sure, You wanted to Exit ? ");
         alertDialogBuilder.setPositiveButton("yes",
                 new DialogInterface.OnClickListener() {
                     @Override
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 //Do nothing
             }
         });
-        alertDialogBuilder.setTitle("Warrning");
+        alertDialogBuilder.setTitle("warning");
         alertDialogBuilder.setIcon(android.R.drawable.stat_sys_warning);
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();

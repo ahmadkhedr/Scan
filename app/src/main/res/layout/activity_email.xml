@@ -44,7 +44,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="29dp"
-            android:background="@drawable/clicked_button"
+            android:background="@drawable/button_background2"
             android:onClick="Convandsend"
             android:text="Convert / Send"
             tools:ignore="OnClick" />
