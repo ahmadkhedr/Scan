@@ -23,7 +23,7 @@
 
         <EditText
             android:id="@+id/text"
-            android:layout_width="250dp"
+            android:layout_width="300dp"
             android:layout_height="45dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
@@ -35,7 +35,7 @@
 
         <EditText
             android:id="@+id/name"
-            android:layout_width="250dp"
+            android:layout_width="300dp"
             android:layout_height="45dp"
             android:layout_alignLeft="@+id/text"
             android:layout_alignStart="@+id/text"
@@ -48,7 +48,7 @@
 
         <EditText
             android:id="@+id/num"
-            android:layout_width="250dp"
+            android:layout_width="300dp"
             android:layout_height="45dp"
             android:layout_alignLeft="@+id/name"
             android:layout_alignStart="@+id/name"

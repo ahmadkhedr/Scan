@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Inventory extends AppCompatActivity {
-    private TextView itemcode,proname,nuum;
+
     private EditText name,num,text;
     private String ok;
     private MyHelper helper;
@@ -22,9 +22,7 @@ public class Inventory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventory);
         text =findViewById(R.id.text);
-        proname =findViewById(R.id.proname);
-        nuum =findViewById(R.id.nuum);
-        itemcode =findViewById(R.id.itemcode);
+
         name =findViewById(R.id.name);
         num =findViewById(R.id.num);
         helper = new MyHelper(this);

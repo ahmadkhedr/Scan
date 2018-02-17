@@ -22,9 +22,7 @@ public class ViewCode extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_code);
         text =findViewById(R.id.text);
-        proname =findViewById(R.id.proname);
-        nuum =findViewById(R.id.nuum);
-        itemcode =findViewById(R.id.itemcode);
+     
         name =findViewById(R.id.name);
         num =findViewById(R.id.num);
         helper = new MyHelper(this);
