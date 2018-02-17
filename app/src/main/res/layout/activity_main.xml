@@ -37,6 +37,7 @@
             android:background="@drawable/button_background"
             android:fontFamily="casual"
             android:text="@string/Setting"
+            android:onClick="SETTING"
             android:textSize="20sp"
             android:textStyle="bold"
             tools:text="@string/Setting" />

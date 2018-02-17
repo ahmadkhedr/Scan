@@ -75,4 +75,9 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.show();
 
     }
+
+    public void SETTING(View view) {
+        Intent a = new Intent(this,Setting.class);
+        startActivity(a);
+    }
 }
