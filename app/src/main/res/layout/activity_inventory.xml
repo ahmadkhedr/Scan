@@ -1,89 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/light3"
     tools:context="kedr.emam.ahmad.scan.Inventory">
-    <TextView
-        android:id="@+id/itemcode"
-        android:layout_width="150dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="100dp"
-        android:text="@string/item_code"
-        android:textSize="18sp" />
-    <EditText
-        android:layout_marginTop="3dp"
-        android:hint="@string/barcode_info"
-        android:layout_below="@id/itemcode"
-        android:id="@+id/text"
-        android:background="@color/Orange"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="50dp" />
-    <TextView
-        android:layout_marginTop="3dp"
-        android:id="@+id/proname"
-        android:layout_width="150dp"
-        android:layout_height="30dp"
-        android:layout_below="@id/text"
-        android:text="@string/product_name"
-        android:textSize="18sp" />
-    <EditText
-        android:layout_marginTop="5dp"
-        android:layout_below="@id/proname"
-        android:gravity="center"
-        android:id="@+id/name"
-        android:background="@color/Orange"
-        android:hint="@string/product_n1ame"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        />
-    <TextView
-        android:layout_marginTop="3dp"
-        android:id="@+id/nuum"
-        android:layout_width="150dp"
-        android:layout_height="30dp"
-        android:layout_below="@id/name"
-        android:text="@string/quantity"
-        android:textSize="18sp" />
 
-    <EditText
-        android:gravity="center"
-        android:layout_marginTop="3dp"
-        android:layout_below="@id/nuum"
-        android:id="@+id/num"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/Orange"
-        android:hint="@string/enert_you_quantity"
-        android:inputType="number" />
-    <Button
-        android:layout_marginTop="40dp"
-        android:layout_alignEnd="@id/num"
-        android:gravity="center"
-        android:layout_below="@id/num"
-        android:onClick="save"
-        android:id="@+id/btnSave"
-        android:text="@string/save"
-        android:background="@color/Orange"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@id/num" />
-    <Button
-        android:layout_marginLeft="180dp"
-        android:layout_alignBottom="@id/btnSave"
-        android:layout_marginTop="15dp"
-        android:gravity="center"
-        android:onClick="Cancel"
-        android:id="@+id/btnCancel"
-        android:text="@string/cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/Orange"
-        android:layout_marginStart="180dp"
-         />
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="0dp"
+        android:layout_height="368dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/layoutbackground">
+
+        <EditText
+            android:id="@+id/text"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/textviewbackground"
+            android:drawableLeft="@drawable/barcode"
+            android:gravity="center"
+            android:hint="@string/barcode_info" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:layout_alignLeft="@+id/text"
+            android:layout_alignStart="@+id/text"
+            android:layout_below="@+id/text"
+            android:layout_marginTop="23dp"
+            android:background="@drawable/textviewbackground"
+            android:drawableLeft="@drawable/horizontal"
+            android:gravity="center"
+            android:hint="@string/product_n1ame" />
+
+        <EditText
+            android:id="@+id/num"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:layout_alignLeft="@+id/name"
+            android:layout_alignStart="@+id/name"
+            android:layout_below="@+id/name"
+            android:layout_marginTop="23dp"
+            android:background="@drawable/textviewbackground"
+            android:drawableLeft="@drawable/quality"
+            android:gravity="center"
+            android:hint="@string/enert_you_quantity"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignEnd="@+id/num"
+            android:layout_alignRight="@+id/num"
+            android:layout_below="@+id/num"
+            android:layout_marginTop="23dp"
+            android:background="@drawable/clicked_button"
+            android:gravity="center"
+            android:onClick="save"
+            android:text="@string/save" />
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:layout_alignLeft="@+id/num"
+            android:layout_alignStart="@+id/num"
+            android:layout_alignTop="@+id/btnSave"
+            android:background="@drawable/clicked_button"
+            android:gravity="center"
+            android:onClick="Cancel"
+            android:text="@string/cancel" />
 
 
-</RelativeLayout>
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>
