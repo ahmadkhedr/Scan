@@ -32,6 +32,7 @@
             android:ems="10"
             android:gravity="center"
             android:hint="example@gmail.com"
+            android:drawableLeft="@drawable/gmail"
             android:inputType="textEmailAddress"
             tools:layout_editor_absoluteX="85dp"
             tools:layout_editor_absoluteY="36dp" />
@@ -63,7 +64,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:drawableLeft="@drawable/excel"
                 android:text="@string/Excel"
+                android:drawablePadding="15dp"
                 tools:text="@string/Excel" />
 
             <RadioButton
@@ -71,6 +74,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:drawablePadding="15dp"
+                android:drawableLeft="@drawable/text"
                 android:text="@string/text"
                 tools:text="@string/text" />
         </RadioGroup>

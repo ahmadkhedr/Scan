@@ -12,7 +12,7 @@
 
         android:id="@+id/relativeLayout4"
         android:layout_width="250dp"
-        android:layout_height="300dp"
+        android:layout_height="400dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="37dp"
         android:layout_marginStart="37dp"
@@ -23,21 +23,39 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.619">
 
+
+        <Button
+            android:id="@+id/SettingButton"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/send"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_background"
+            android:fontFamily="casual"
+            android:text="@string/Setting"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="@string/Setting" />
 
         <Button
 
             android:id="@+id/scan"
             android:layout_width="230dp"
             android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/SettingButton"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="31dp"
+            android:layout_alignStart="@+id/SettingButton"
+            android:layout_marginTop="19dp"
             android:background="@drawable/button_background"
+            android:fontFamily="casual"
             android:onClick="can"
             android:text="@string/scan_using_camera"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/manual"
@@ -48,9 +66,11 @@
             android:layout_below="@+id/scan"
             android:layout_marginTop="14dp"
             android:background="@drawable/button_background"
+            android:fontFamily="casual"
             android:onClick="invent"
             android:text="@string/inventory"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/show"
@@ -61,9 +81,11 @@
             android:layout_below="@+id/manual"
             android:layout_marginTop="18dp"
             android:background="@drawable/button_background"
+            android:fontFamily="casual"
             android:onClick="show"
             android:text="@string/show_items"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/send"
@@ -75,9 +97,25 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/button_background"
 
+            android:fontFamily="casual"
             android:onClick="Email"
             android:text="@string/Email"
             android:textSize="20sp"
+            android:textStyle="bold"
             tools:text="@string/Email" />
+
+        <Button
+            android:id="@+id/ExitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/SettingButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="11dp"
+            android:background="@drawable/button_background"
+            android:fontFamily="casual"
+            android:text="@string/Exit"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:onClick="Exit"/>
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

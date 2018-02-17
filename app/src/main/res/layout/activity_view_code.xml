@@ -32,6 +32,7 @@
             android:layout_marginTop="43dp"
             android:background="@drawable/textviewbackground"
             android:drawableLeft="@drawable/barcode"
+            android:fontFamily="casual"
             android:gravity="center"
             android:hint="@string/barcode_info" />
 
@@ -46,6 +47,7 @@
             android:layout_marginTop="29dp"
             android:background="@drawable/textviewbackground"
             android:drawableLeft="@drawable/horizontal"
+            android:fontFamily="casual"
             android:gravity="center"
             android:hint="@string/product_n1ame" />
 
@@ -60,6 +62,7 @@
             android:layout_marginTop="23dp"
             android:background="@drawable/textviewbackground"
             android:drawableLeft="@drawable/quality"
+            android:fontFamily="casual"
             android:gravity="center"
             android:hint="@string/enert_you_quantity"
             android:inputType="number" />

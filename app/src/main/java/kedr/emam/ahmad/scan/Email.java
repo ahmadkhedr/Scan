@@ -33,6 +33,7 @@ MyHelper myHelper;
     SQLiteDatabase sqldb ;
     EditText edEmail;
     Cursor c;
+    int Check;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +54,9 @@ MyHelper myHelper;
                 Toast.makeText(this, "plz .. Enter your Email first ", Toast.LENGTH_SHORT).show();
             } else {
                 Convert("MyBackUp.csv");
-                Send("ScanBackup/MyBackUp.csv", edEmail.getText().toString());
+                if (Check == 1) { // if file Export
+                    Send("ScanBackup/MyBackUp.csv", edEmail.getText().toString());
+                }
             }
         }
 else if (radioGroup.getCheckedRadioButtonId() == R.id.radiotext) {
@@ -64,7 +67,9 @@ else if (radioGroup.getCheckedRadioButtonId() == R.id.radiotext) {
                 Toast.makeText(this, "plz .. Enter your Email first ", Toast.LENGTH_SHORT).show();
             } else {
                 Convert("MyBackUp.txt");
-                Send("ScanBackup/MyBackUp.txt", edEmail.getText().toString());
+                if(Check == 1 ) { // if file Export
+                    Send("ScanBackup/MyBackUp.txt", edEmail.getText().toString());
+                }
             }
         }
     }
@@ -119,10 +124,12 @@ else if (radioGroup.getCheckedRadioButtonId() == R.id.radiotext) {
 
             }
             Toast.makeText(this, "Exported Successfully", Toast.LENGTH_SHORT).show();
+            Check=1;
         } catch (Exception ex) {
             if (sqldb.isOpen()) {
                 sqldb.close();
                 Toast.makeText(this, "UnExported Successfully", Toast.LENGTH_SHORT).show();
+                Check=0;
                 Toast.makeText(this, ex.getMessage().toString(), Toast.LENGTH_SHORT).show();
             }
 
