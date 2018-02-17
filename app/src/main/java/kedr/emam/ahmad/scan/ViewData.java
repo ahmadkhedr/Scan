@@ -9,9 +9,12 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -20,9 +23,11 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
-public class ViewData extends AppCompatActivity {
+public class ViewData extends AppCompatActivity   {
     private ListView ListView;
+
     private  ArrayList<String> name;
     private ArrayList<String> code;
     private ArrayList<String> quantity;
@@ -37,8 +42,11 @@ private SQLiteDatabase db;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_data);
+        ListView = (ListView) findViewById(R.id.ListView);
+        registerForContextMenu(ListView);
         helper = new MyHelper(ViewData.this);
         db = helper.getWritableDatabase();
+
         String[]  ok = {"id","code","name","quantity"};
         pointer = db.query("Data",ok,null,null,null,null,null,null);
         Toast.makeText(this, "Rows = "+pointer.getCount(), Toast.LENGTH_SHORT).show();
@@ -68,9 +76,9 @@ for (int i =0; i < name.size(); i++){
     adapter.add(model);
 
 }
-        ListView = (ListView) findViewById(R.id.ListView);
 
         ListView.setAdapter(adapter);
+
 
 
     }
@@ -110,5 +118,28 @@ ArrayModel model = getItem(position);
     public void onBackPressed() {
         super.onBackPressed();
         this.finish();
+    }
+    /////////////////////////context menu////////////////////////////
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo)
+    {
+       getMenuInflater().inflate(R.menu.v,menu);
+    }
+    @Override
+    public boolean onContextItemSelected(MenuItem item)
+    {
+       switch (item.getItemId()){
+           case R.id.Edit:
+               Toast.makeText(this, "Edit", Toast.LENGTH_SHORT).show();
+               break;
+           case R.id.Delete:
+              // db.delete("Data"," name=?",new String[]{"jack"});
+
+
+               Toast.makeText(this, "Delete", Toast.LENGTH_SHORT).show();
+       }
+
+        return super.onContextItemSelected(item);
     }
 }
