@@ -39,7 +39,7 @@ public class Inventory extends AppCompatActivity {
         ContentValues row = new ContentValues();
         row.put("code",code);
         row.put("name",namo);
-        row.put("num",number);
+        row.put("quantity",number);
         db.insert("Data",null,row);
         Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
         Intent w = new Intent(this,ViewData.class);
