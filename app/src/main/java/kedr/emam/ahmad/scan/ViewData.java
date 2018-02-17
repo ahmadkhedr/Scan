@@ -25,7 +25,7 @@ public class ViewData extends AppCompatActivity {
     private ListView ListView;
     private  ArrayList<String> name;
     private ArrayList<String> code;
-    private ArrayList<String> num;
+    private ArrayList<String> quantity;
 private TextView etView;
 private MyHelper helper;
 private SQLiteDatabase db;
@@ -39,12 +39,12 @@ private SQLiteDatabase db;
         setContentView(R.layout.activity_view_data);
         helper = new MyHelper(ViewData.this);
         db = helper.getWritableDatabase();
-        String[]  ok = {"id","code","name","num"};
+        String[]  ok = {"id","code","name","quantity"};
         pointer = db.query("Data",ok,null,null,null,null,null,null);
         Toast.makeText(this, "Rows = "+pointer.getCount(), Toast.LENGTH_SHORT).show();
         name = new ArrayList<String>();
         code = new ArrayList<String>();
-        num = new ArrayList<String>();
+        quantity = new ArrayList<String>();
 
         while( pointer.moveToNext()){
 
@@ -52,19 +52,19 @@ private SQLiteDatabase db;
 
             code.add(pointer.getString(1));
 
-            num.add( pointer.getString(3));
+            quantity.add( pointer.getString(3));
 
 
         }
         Collections.reverse(name);
         Collections.reverse(code);
-        Collections.reverse(num);
+        Collections.reverse(quantity);
         ArrayList<ArrayModel> adapt = new ArrayList<ArrayModel>();
         myadapter adapter = new myadapter(this,adapt);
 
-for (int i =0; i <name.size(); i++){
+for (int i =0; i < name.size(); i++){
 
-    ArrayModel model = new ArrayModel(name.get(i),code.get(i),num.get(i));
+    ArrayModel model = new ArrayModel(name.get(i),code.get(i),quantity.get(i));
     adapter.add(model);
 
 }
