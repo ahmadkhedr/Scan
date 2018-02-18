@@ -96,7 +96,7 @@ public class Camera extends AppCompatActivity implements ZXingScannerView.Result
     public void onResume() {
         super.onResume();
 
-        int currentapiVersion = android.os.Build.VERSION.SDK_INT;
+        int currentapiVersion = Build.VERSION.SDK_INT;
         if (currentapiVersion >= Build.VERSION_CODES.JELLY_BEAN) {
             if (checkPermission()) {
                 if (scannerView == null) {
