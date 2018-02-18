@@ -12,11 +12,7 @@ public class Setting extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
-        /////font Style
-        TextView SettingHeader = findViewById(R.id.SettingHeader);
-        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/mandali.ttf");
-        SettingHeader.setTypeface(font);
-        /////////////\\\\\\\\
+
 
     }
 }

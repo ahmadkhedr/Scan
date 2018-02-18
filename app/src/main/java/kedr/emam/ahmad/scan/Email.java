@@ -89,7 +89,6 @@ else if (radioGroup.getCheckedRadioButtonId() == R.id.radiotext) {
             // the name of the file to export with
             File saveFile = new File(sdCardDir, filename);
             FileWriter fw = new FileWriter(saveFile);
-
             BufferedWriter bw = new BufferedWriter(fw);
             rowcount = c.getCount();
             colcount = c.getColumnCount();

@@ -33,7 +33,8 @@
             android:drawableLeft="@drawable/barcode"
             android:fontFamily="casual"
             android:gravity="center"
-            android:hint="@string/barcode_info" />
+            android:hint="@string/barcode_info"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/name"
@@ -47,7 +48,8 @@
             android:drawableLeft="@drawable/horizontal"
             android:fontFamily="casual"
             android:gravity="center"
-            android:hint="@string/product_n1ame" />
+            android:hint="@string/product_n1ame"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/num"
@@ -62,7 +64,8 @@
             android:fontFamily="casual"
             android:gravity="center"
             android:hint="@string/enert_you_quantity"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnSave"

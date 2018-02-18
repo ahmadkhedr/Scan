@@ -29,11 +29,12 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="43dp"
             android:background="@drawable/textviewbackground"
+            android:drawableLeft="@drawable/gmail"
             android:ems="10"
             android:gravity="center"
             android:hint="example@gmail.com"
-            android:drawableLeft="@drawable/gmail"
             android:inputType="textEmailAddress"
+            android:textStyle="bold"
             tools:layout_editor_absoluteX="85dp"
             tools:layout_editor_absoluteY="36dp" />
 

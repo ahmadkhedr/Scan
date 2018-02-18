@@ -15,10 +15,13 @@
     <string name="dialog_fire_missiles">Plz Check Internet Conncetion </string>
     <string name="Alertfaild">No Internet </string>
     <string name="OK">OK</string>
+    <string name="Default">Default Email </string>
     <string name="SaveandScan">Save / Scan</string>
     <string name="quantity">Quantity:</string>
+    <string name="Backupfiledirectory">BackUp File Directory </string>
     <string name="Setting">SETTING</string>
     <string name="Exit">Exit</string>
     <string name="title_activity_inventory">Inventory</string>
     <string name="inventory">Inventory</string>
+    <string name="Formate"> Wipe Program Data </string>
 </resources>
