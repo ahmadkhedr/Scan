@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class MyHelper extends SQLiteOpenHelper {
     public MyHelper(Context context) {
-        super(context, "Items", null, 2);
+        super(context, "db", null, 2);
     }
 
     @Override
@@ -23,4 +23,5 @@ public class MyHelper extends SQLiteOpenHelper {
         db.execSQL("drop table Data");
         onCreate(db);
     }
+
 }

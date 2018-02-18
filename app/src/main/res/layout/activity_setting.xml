@@ -72,6 +72,7 @@
             tools:text="@string/Default" />
 
         <Button
+            android:onClick="save"
             android:id="@+id/button2"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
@@ -86,6 +87,7 @@
             tools:text="@string/save" />
 
         <Button
+            android:onClick="backup"
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -99,6 +101,7 @@
             tools:text="@string/Backupfiledirectory" />
 
         <Button
+            android:onClick="wipe"
             android:id="@+id/button4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

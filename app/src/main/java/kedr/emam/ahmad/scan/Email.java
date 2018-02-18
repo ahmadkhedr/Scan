@@ -2,6 +2,7 @@ package kedr.emam.ahmad.scan;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
@@ -32,6 +33,7 @@ RadioGroup radioGroup;
 MyHelper myHelper;
     SQLiteDatabase sqldb ;
     EditText edEmail;
+   String email;
     Cursor c;
     int Check;
     @Override
@@ -44,6 +46,9 @@ MyHelper myHelper;
         c = null;
 
         edEmail = findViewById(R.id.edEmail);
+        SharedPreferences x = getSharedPreferences("data",MODE_PRIVATE);
+        email = x.getString("mail"," ");
+        edEmail.setText(email);
     }
 
     public void Convandsend(View view) {
