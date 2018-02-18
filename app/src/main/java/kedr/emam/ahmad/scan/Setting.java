@@ -1,11 +1,13 @@
 package kedr.emam.ahmad.scan;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Environment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -58,8 +60,18 @@ public class Setting extends AppCompatActivity {
     }
 
     public void wipe(View view) {
-        db.delete("Data",null,null);
-        db.execSQL("delete from "+ "Data");
-        Toast.makeText(this, "All data has een deleted succesfully", Toast.LENGTH_SHORT).show();
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Warning!");
+        alert.setMessage("Delete the whole data?");
+        alert.setNegativeButton("NO",null);
+        alert.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                db.delete("Data",null,null);
+                db.execSQL("delete from "+ "Data");
+                Toast.makeText(Setting.this, "All data has been deleted successfully", Toast.LENGTH_SHORT).show();
+            }
+        });
+       alert.show();
     }
 }
