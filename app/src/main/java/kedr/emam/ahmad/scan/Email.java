@@ -92,6 +92,7 @@ else if (radioGroup.getCheckedRadioButtonId() == R.id.radiotext) {
             }
             String filename = Filnameandtype; // "MyBackUp.csv" or "MyBackUp.txt"
             // the name of the file to export with
+
             File saveFile = new File(sdCardDir, filename);
             FileWriter fw = new FileWriter(saveFile);
             BufferedWriter bw = new BufferedWriter(fw);

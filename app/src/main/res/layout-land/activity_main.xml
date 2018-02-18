@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/light2"
+    tools:context="kedr.emam.ahmad.scan.MainActivity">
+
+    <RelativeLayout
+
+        android:id="@+id/relativeLayout4"
+        android:layout_width="0dp"
+        android:layout_height="275dp"
+
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="71dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="93dp"
+        android:background="@drawable/layoutbackground"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <Button
+            android:id="@+id/SettingButton"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/manual"
+            android:layout_alignBottom="@+id/manual"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="13dp"
+            android:layout_marginRight="13dp"
+            android:background="@drawable/button_background"
+            android:fontFamily="casual"
+            android:onClick="SETTING"
+            android:text="@string/Setting"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="@string/Setting" />
+
+        <Button
+
+            android:id="@+id/scan"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="14dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_background"
+            android:fontFamily="casual"
+            android:onClick="can"
+            android:text="@string/scan_using_camera"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/manual"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/scan"
+            android:layout_alignStart="@+id/scan"
+            android:layout_below="@+id/scan"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/button_background"
+            android:fontFamily="casual"
+            android:onClick="invent"
+            android:text="@string/inventory"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/show"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/manual"
+            android:layout_alignStart="@+id/manual"
+            android:layout_below="@+id/manual"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/button_background"
+            android:fontFamily="casual"
+            android:onClick="show"
+            android:text="@string/show_items"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/send"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/show"
+            android:layout_alignStart="@+id/show"
+            android:layout_below="@+id/show"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_background"
+
+            android:fontFamily="casual"
+            android:onClick="Email"
+            android:text="@string/Email"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="@string/Email" />
+
+        <Button
+            android:id="@+id/ExitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/show"
+            android:layout_alignBottom="@+id/show"
+            android:layout_alignLeft="@+id/SettingButton"
+            android:layout_alignStart="@+id/SettingButton"
+            android:layout_marginLeft="42dp"
+            android:layout_marginStart="42dp"
+            android:background="@drawable/button_background"
+            android:fontFamily="casual"
+            android:onClick="Exit"
+            android:text="@string/Exit"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
