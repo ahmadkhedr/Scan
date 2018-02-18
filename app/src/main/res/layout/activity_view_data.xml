@@ -15,6 +15,7 @@
         android:layout_marginTop="32dp"
         android:divider="@android:color/darker_gray"
         android:dividerHeight="2sp"
+        android:stackFromBottom="true"
         app:layout_constraintTop_toTopOf="parent">
 
     </ListView>
