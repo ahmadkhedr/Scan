@@ -78,8 +78,9 @@ public class ViewCode extends AppCompatActivity {
         row.put("code",code);
         row.put("name",namo);
         row.put("quantity",number);
+        if (Checkempty()== 1) {
         int a = (int) db.insert("Data",null,row);
-         if (Checkempty()==1) {
+
             if (a > -1) { //if insert done
         Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
         Intent ww = new Intent(this, Camera.class);

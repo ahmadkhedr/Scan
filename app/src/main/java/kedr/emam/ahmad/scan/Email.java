@@ -100,7 +100,7 @@ else if (radioGroup.getCheckedRadioButtonId() == R.id.radiotext) {
             if (rowcount > 0) {
                 c.moveToFirst();
 
-                for (int i = 0; i < colcount; i++) {
+                for (int i = 1; i < colcount; i++) {
                     if (i != colcount - 1) {
 
                         bw.write(c.getColumnName(i) + ",");
@@ -116,7 +116,7 @@ else if (radioGroup.getCheckedRadioButtonId() == R.id.radiotext) {
                 for (int i = 0; i < rowcount; i++) {
                     c.moveToPosition(i);
 
-                    for (int j = 0; j < colcount; j++) {
+                    for (int j = 1; j < colcount; j++) {
                         if (j != colcount - 1)
                             bw.write(c.getString(j) + ",");
                         else

@@ -142,7 +142,6 @@ ArrayModel model = getItem(position);
         menu.setHeaderTitle("Select The Action");
         menu.add(0, v.getId(), 0, "Edit");//groupId, itemId, order, title
         menu.add(0, v.getId(), 0, "Delete");
-        menu.add(0, v.getId(), 0, "id");
     }
     @Override
     public boolean onContextItemSelected(MenuItem item){
