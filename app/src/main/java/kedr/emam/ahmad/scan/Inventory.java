@@ -17,6 +17,8 @@ public class Inventory extends AppCompatActivity {
     private MyHelper helper;
     private Integer  cc;
     private SQLiteDatabase db;
+    Boolean fromShowItem;
+    Bundle i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,21 +29,39 @@ public class Inventory extends AppCompatActivity {
         num =findViewById(R.id.num);
         helper = new MyHelper(this);
         db =helper.getWritableDatabase();
+        fromShowItem = false; //to recognize If Activty Run from MainActivity or From ViewData Activity
+         i = getIntent().getExtras();
+        if(i!=null){
+            text.setText(i.getString("code"));
+            name.setText(i.getString("name"));
+            num.setText(i.getString("quantity"));
+       fromShowItem = true;  //From ViewData
+        }
+
+
+
     }
 
     public void save(View view) {
         String code = text.getText().toString();
         String namo = name.getText().toString();
         String number = num.getText().toString();
+
         if (Checkempty() == 1) {
             ContentValues row = new ContentValues();
             row.put("code", code);
             row.put("name", namo);
             row.put("quantity", number);
+            int a = -1;
+            if(fromShowItem == false) { //From MainActivity Just Insert
+                a = (int) db.insert("Data", null, row);
+            }else if (fromShowItem == true){ //From ViewData Update
+                //Update Row
+                a = db.update("Data",row,"id = ?",new String[]{i.getString("id")});
+            }
 
-            int a = (int) db.insert("Data", null, row);
             if (a > -1) {//code to save the data in the Sqlite database then see it beside other products in a table
-                Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Saved ", Toast.LENGTH_SHORT).show();
                 Intent ww = new Intent(this, ViewData.class);
                 startActivity(ww);
                 this.finish();

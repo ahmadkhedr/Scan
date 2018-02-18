@@ -33,7 +33,7 @@ public class Setting extends AppCompatActivity {
         db = helper.getWritableDatabase();
 
         SharedPreferences x = getSharedPreferences("data",MODE_PRIVATE);
-        email = x.getString("mail"," ");
+        email = x.getString("mail","");
         editText.setText(email);
 
 

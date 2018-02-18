@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.NonNull;
@@ -67,6 +68,7 @@ private SQLiteDatabase db;
         while( pointer.moveToNext()){
 
             name.add(pointer.getString(2));
+
             id.add(pointer.getString(0));
 
             code.add(pointer.getString(1));
@@ -75,10 +77,7 @@ private SQLiteDatabase db;
 
 
         }
-        Collections.reverse(name);
-        Collections.reverse(id);
-        Collections.reverse(code);
-        Collections.reverse(quantity);
+
         ArrayList<ArrayModel> adapt = new ArrayList<ArrayModel>();
          adapter = new myadapter(this,adapt);
 
@@ -91,8 +90,8 @@ for (int i =0; i < name.size(); i++){
 }
 
         ListView.setAdapter(adapter);
-
-
+        adapter.notifyDataSetChanged();
+        registerForContextMenu(ListView);
 
 
 
@@ -126,7 +125,7 @@ ArrayModel model = getItem(position);
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d("taa","Destroyed");
+       // Log.d("taa","Destroyed");
     }
 
     @Override
@@ -135,28 +134,58 @@ ArrayModel model = getItem(position);
         this.finish();
     }
 
+
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo)
     {
-       getMenuInflater().inflate(R.menu.v,menu);
+        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.setHeaderTitle("Select The Action");
+        menu.add(0, v.getId(), 0, "Edit");//groupId, itemId, order, title
+        menu.add(0, v.getId(), 0, "Delete");
+        menu.add(0, v.getId(), 0, "id");
     }
     @Override
-    public boolean onContextItemSelected(MenuItem item)
-    {
+    public boolean onContextItemSelected(MenuItem item){
+
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-       switch (item.getItemId()){
-           case R.id.Edit:
-               Toast.makeText(this, "Edit", Toast.LENGTH_SHORT).show();
-               break;
-           case R.id.Delete:
+        int index = info.position;
 
 
+        if(item.getTitle()=="Edit"){
+            //Toast.makeText(getApplicationContext(),"edit",Toast.LENGTH_LONG).show();
 
-               Toast.makeText(this, "Delete", Toast.LENGTH_SHORT).show();
-       }
+            Intent A = new Intent(ViewData.this,Inventory.class);
+            A.putExtra("id",id.get(index));//Id Of ItemSelected in Database
+            A.putExtra("name",name.get(index));//name Of ItemSelected in Database
+            A.putExtra("code",code.get(index));//code Of ItemSelected in Database
+            A.putExtra("quantity",quantity.get(index));//quantity Of ItemSelected in Database
+            startActivity(A);
+            this.finish();
+        }
 
-        return super.onContextItemSelected(item);
+        else if(item.getTitle()=="Delete"){
+             MyHelper helper = new MyHelper(this);
+            SQLiteDatabase db = helper.getWritableDatabase();
+           int a =  db.delete("Data","id = ?",new String[]{id.get(index)});
+
+            if(a > 0){
+                Toast.makeText(this, "Deleted", Toast.LENGTH_SHORT).show();
+                Intent refresh = new Intent(this,ViewData.class);
+                startActivity(refresh);
+                this.finish();
+
+            }
+            else {
+
+                Toast.makeText(this, "Not Deleted ", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        else{
+
+            return false;
+        }
+        return true;
     }
-
 
 }
