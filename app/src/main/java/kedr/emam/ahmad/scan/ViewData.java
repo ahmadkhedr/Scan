@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -59,7 +60,7 @@ private SQLiteDatabase db;
 
         String[]  ok = {"id","code","name","quantity"};
         pointer = db.query("Data",ok,null,null,null,null,null,null);
-        Toast.makeText(this, "Rows = "+pointer.getCount(), Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "Rows = "+pointer.getCount(), Toast.LENGTH_SHORT).show();
         name = new ArrayList<String>();
         id = new ArrayList<String>();
         code = new ArrayList<String>();
@@ -79,6 +80,7 @@ private SQLiteDatabase db;
         }
 
         ArrayList<ArrayModel> adapt = new ArrayList<ArrayModel>();
+
          adapter = new myadapter(this,adapt);
 
 for (int i =0; i < name.size(); i++){
@@ -89,16 +91,18 @@ for (int i =0; i < name.size(); i++){
 
 }
 
+
         ListView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
         registerForContextMenu(ListView);
 
 
 
+
     }
     public  class myadapter extends ArrayAdapter<ArrayModel> {
 
-        public myadapter(@NonNull Context context,@NonNull ArrayList<ArrayModel> objects) {
+        public myadapter(@NonNull Context context, @NonNull ArrayList<ArrayModel> objects) {
             super(context, 0, objects);
         }
 
@@ -106,9 +110,11 @@ for (int i =0; i < name.size(); i++){
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
             //WE CREATE THIS INFLATER TO INFLATE OUR NEW XML DESIGN TO THE ACTIVITY
+            // Get the current item from ListVie
+
             LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
-            View v =  inflater.inflate(R.layout.customlist,parent,false);
-ArrayModel model = getItem(position);
+            View v = inflater.inflate(R.layout.customlist, parent, false);
+            ArrayModel model = getItem(position);
             TextView tvName = (TextView) v.findViewById(R.id.tvName);
             tvName.setText("Product name: " + model.name);
 
@@ -116,11 +122,12 @@ ArrayModel model = getItem(position);
             tvcode.setText("Bar code: " + model.code);
 
             TextView tvnumer = (TextView) v.findViewById(R.id.tvnumer);
-            tvnumer.setText("Quantity: "+ model.num);
-
+            tvnumer.setText("Quantity: " + model.num);
             return v;
         }
+
     }
+
 
     @Override
     protected void onDestroy() {

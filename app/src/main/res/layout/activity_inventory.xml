@@ -34,6 +34,7 @@
             android:fontFamily="casual"
             android:gravity="center"
             android:hint="@string/barcode_info"
+            android:inputType="number"
             android:textStyle="bold" />
 
         <EditText
