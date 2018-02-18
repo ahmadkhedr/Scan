@@ -9,11 +9,10 @@
 
     <TextView
         android:id="@+id/settingHeader"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="148dp"
+        android:layout_alignParentBottom="true"
+  android:paddingRight="7dp"
         android:background="@drawable/layoutbackground"
         android:drawableLeft="@drawable/settingss"
         android:drawablePadding="15dp"
@@ -25,23 +24,23 @@
         android:textColor="@android:color/holo_orange_light"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/Setting" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout5"
-        android:layout_width="287dp"
-        android:layout_height="300dp"
-        android:layout_marginBottom="89dp"
-        android:layout_marginEnd="58dp"
-        android:layout_marginStart="58dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="42dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="42dp"
         android:background="@drawable/layoutbackground"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/settingHeader"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settingHeader">
+        app:layout_constraintTop_toTopOf="parent">
 
         <EditText
             android:id="@+id/editText"
@@ -73,7 +72,6 @@
             tools:text="@string/Default" />
 
         <Button
-            android:onClick="save"
             android:id="@+id/button2"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
@@ -83,34 +81,35 @@
             android:background="@drawable/button_background2"
             android:drawableLeft="@drawable/save"
             android:drawablePadding="15dp"
+            android:onClick="save"
             android:paddingLeft="12dip"
             android:text="@string/save"
             tools:text="@string/save" />
 
         <Button
-            android:onClick="backup"
             android:id="@+id/button3"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/button2"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="18dp"
             android:background="@drawable/button_background2"
+            android:onClick="backup"
             android:text="@string/Backupfiledirectory"
 
             android:textAllCaps="false"
             tools:text="@string/Backupfiledirectory" />
 
         <Button
-            android:onClick="wipe"
             android:id="@+id/button4"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/button3"
             android:layout_centerHorizontal="true"
-
             android:layout_marginTop="17dp"
+
             android:background="@drawable/button_background2"
+            android:onClick="wipe"
             android:text="@string/Formate"
             android:textAllCaps="false"
             tools:text="@string/Formate" />

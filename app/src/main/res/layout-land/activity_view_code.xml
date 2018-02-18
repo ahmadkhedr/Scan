@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/light3"
+    android:orientation="vertical"
+    tools:context="kedr.emam.ahmad.scan.ViewCode">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout4"
+        android:layout_width="400dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="22dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/layoutbackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/textviewbackground"
+            android:drawableLeft="@drawable/barcode"
+            android:fontFamily="casual"
+            android:paddingLeft="5dp"
+            android:gravity="center"
+            android:hint="@string/barcode_info"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+
+            android:layout_alignLeft="@+id/text"
+            android:layout_alignStart="@+id/text"
+            android:paddingLeft="5dp"
+            android:layout_below="@+id/text"
+            android:layout_marginTop="23dp"
+            android:background="@drawable/textviewbackground"
+            android:drawableLeft="@drawable/horizontal"
+            android:fontFamily="casual"
+            android:gravity="center"
+            android:hint="@string/product_n1ame"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/num"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:paddingLeft="5dp"
+            android:layout_alignLeft="@+id/name"
+            android:layout_alignStart="@+id/name"
+            android:layout_below="@+id/name"
+            android:layout_marginTop="23dp"
+            android:background="@drawable/textviewbackground"
+            android:drawableLeft="@drawable/quality"
+            android:fontFamily="casual"
+            android:gravity="center"
+            android:hint="@string/enert_you_quantity"
+            android:inputType="number"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/SaveandScan"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:background="@drawable/button_background2"
+            android:gravity="center"
+            android:onClick="save"
+            android:text="@string/save" />
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/SaveandScan"
+            android:layout_marginLeft="35dp"
+            android:layout_marginStart="35dp"
+            android:background="@drawable/button_background2"
+            android:gravity="center"
+            android:onClick="Cancel"
+            android:text="@string/cancel"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btnSave"
+            app:layout_constraintBottom_toBottomOf="@+id/btnSave"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/SaveandScan"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/num"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/button_background2"
+            android:onClick="saveandscan"
+            android:text="@string/SaveandScan"
+            tools:text="@string/SaveandScan" />
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
