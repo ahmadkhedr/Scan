@@ -63,7 +63,7 @@
         android:layout_alignLeft="@+id/textView"
         android:layout_alignStart="@+id/textView"
         android:layout_below="@+id/tvName"
-        android:text="@string/Productname"
+        android:text="@string/Barcode"
         android:textColor="#037bb5"
         android:textSize="20sp"
         android:textStyle="bold"
