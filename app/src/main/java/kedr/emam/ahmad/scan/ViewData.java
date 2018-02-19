@@ -47,7 +47,7 @@ private MyHelper helper;
 private SQLiteDatabase db;
     Cursor pointer;
     int positionmark ;
-
+    int codition;
    String[] listData;
     private static final String TAG = "ListDataActivity";
     @Override
@@ -78,7 +78,7 @@ private SQLiteDatabase db;
 
 
         }
-        positionmark = name.size()-1; //last Position in listView  To Select and make Light
+        //last Position in listView  To Select and make Light
 
         ArrayList<ArrayModel> adapt = new ArrayList<ArrayModel>();
 
@@ -101,6 +101,7 @@ Bundle ww = getIntent().getExtras();
 if(ww != null){ //selection of list View when edit Your inventory
     positionmark = ww.getInt("position");
     //Toast.makeText(this, ""+positionmark, Toast.LENGTH_SHORT).show();
+    codition = 1;
     ListView.setSelection(positionmark);
 
 }
@@ -134,8 +135,10 @@ if(ww != null){ //selection of list View when edit Your inventory
 
 
             if( positionmark == position){
-                RelativeLayout customlist = v.findViewById(R.id.customlistviewlayout);
-                customlist.setBackgroundResource(R.drawable.button_background2);
+                if(codition==1) {
+                    RelativeLayout customlist = v.findViewById(R.id.customlistviewlayout);
+                    customlist.setBackgroundResource(R.drawable.button_background2);
+                }
             }
 
 
