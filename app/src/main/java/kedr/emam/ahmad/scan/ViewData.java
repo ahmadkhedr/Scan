@@ -100,7 +100,7 @@ Bundle ww = getIntent().getExtras();
 
 if(ww != null){ //selection of list View when edit Your inventory
     positionmark = ww.getInt("position");
-    Toast.makeText(this, ""+positionmark, Toast.LENGTH_SHORT).show();
+    //Toast.makeText(this, ""+positionmark, Toast.LENGTH_SHORT).show();
     ListView.setSelection(positionmark);
 
 }

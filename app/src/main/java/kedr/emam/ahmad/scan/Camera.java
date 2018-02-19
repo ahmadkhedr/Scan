@@ -127,4 +127,10 @@ this.finish();
 
 
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        this.finish();
+    }
 }
