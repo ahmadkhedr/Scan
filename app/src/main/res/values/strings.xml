@@ -23,5 +23,8 @@
     <string name="Exit">Exit</string>
     <string name="title_activity_inventory">Inventory</string>
     <string name="inventory">Inventory</string>
+    <string name="Productname">Product Name : </string>
+    <string name="Barcode">Bar Code : </string>
+    <string name="Quantity">Quantity : </string>
     <string name="Formate"> Wipe Program Data </string>
 </resources>

@@ -116,13 +116,13 @@ for (int i =0; i < name.size(); i++){
             View v = inflater.inflate(R.layout.customlist, parent, false);
             ArrayModel model = getItem(position);
             TextView tvName = (TextView) v.findViewById(R.id.tvName);
-            tvName.setText("Product name: " + model.name);
+            tvName.setText( model.name);
 
             TextView tvcode = (TextView) v.findViewById(R.id.tvcode);
-            tvcode.setText("Bar code: " + model.code);
+            tvcode.setText( model.code);
 
             TextView tvnumer = (TextView) v.findViewById(R.id.tvnumer);
-            tvnumer.setText("Quantity: " + model.num);
+            tvnumer.setText( model.num);
             return v;
         }
 
