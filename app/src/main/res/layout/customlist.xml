@@ -15,6 +15,7 @@
         android:layout_marginStart="20dp"
         android:layout_toEndOf="@+id/textView"
         android:layout_toRightOf="@+id/textView"
+        android:fontFamily="casual"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -26,6 +27,7 @@
         android:layout_below="@+id/tvName"
         android:layout_toEndOf="@+id/textView3"
         android:layout_toRightOf="@+id/textView3"
+        android:fontFamily="casual"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -37,6 +39,7 @@
         android:layout_below="@+id/tvcode"
         android:layout_toEndOf="@+id/textView3"
         android:layout_toRightOf="@+id/textView3"
+        android:fontFamily="casual"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -50,6 +53,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="14dp"
         android:layout_marginStart="14dp"
+        android:fontFamily="sans-serif"
         android:text="@string/Productname"
         android:textColor="#037bb5"
         android:textSize="20sp"
