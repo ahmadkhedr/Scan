@@ -46,6 +46,7 @@ private TextView etView;
 private MyHelper helper;
 private SQLiteDatabase db;
     Cursor pointer;
+    int positionmark ;
 
    String[] listData;
     private static final String TAG = "ListDataActivity";
@@ -57,7 +58,6 @@ private SQLiteDatabase db;
         registerForContextMenu(ListView);
         helper = new MyHelper(ViewData.this);
         db = helper.getWritableDatabase();
-
         String[]  ok = {"id","code","name","quantity"};
         pointer = db.query("Data",ok,null,null,null,null,null,null);
        // Toast.makeText(this, "Rows = "+pointer.getCount(), Toast.LENGTH_SHORT).show();
@@ -78,6 +78,7 @@ private SQLiteDatabase db;
 
 
         }
+        positionmark = name.size()-1; //last Position in listView  To Select and make Light
 
         ArrayList<ArrayModel> adapt = new ArrayList<ArrayModel>();
 
@@ -95,7 +96,14 @@ for (int i =0; i < name.size(); i++){
         ListView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
         registerForContextMenu(ListView);
+Bundle ww = getIntent().getExtras();
 
+if(ww != null){ //selection of list View when edit Your inventory
+    positionmark = ww.getInt("position");
+    Toast.makeText(this, ""+positionmark, Toast.LENGTH_SHORT).show();
+    ListView.setSelection(positionmark);
+
+}
 
 
 
@@ -123,6 +131,14 @@ for (int i =0; i < name.size(); i++){
 
             TextView tvnumer = (TextView) v.findViewById(R.id.tvnumer);
             tvnumer.setText( model.num);
+
+
+            if( positionmark == position){
+                RelativeLayout customlist = v.findViewById(R.id.customlistviewlayout);
+                customlist.setBackgroundResource(R.drawable.button_background2);
+            }
+
+
             return v;
         }
 
@@ -165,6 +181,7 @@ for (int i =0; i < name.size(); i++){
             A.putExtra("name",name.get(index));//name Of ItemSelected in Database
             A.putExtra("code",code.get(index));//code Of ItemSelected in Database
             A.putExtra("quantity",quantity.get(index));//quantity Of ItemSelected in Database
+            A.putExtra("postion",index); //ListView Position Mark عشان وانت راجع تلاقي الليست فيو منورة علي اخر تعديل
             startActivity(A);
             this.finish();
         }

@@ -19,6 +19,7 @@ public class Inventory extends AppCompatActivity {
     private SQLiteDatabase db;
     Boolean fromShowItem;
     Bundle i;
+    int postionmark;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,7 @@ public class Inventory extends AppCompatActivity {
             text.setText(i.getString("code"));
             name.setText(i.getString("name"));
             num.setText(i.getString("quantity"));
+            postionmark = i.getInt("postion");
        fromShowItem = true;  //From ViewData
         }
 
@@ -53,16 +55,19 @@ public class Inventory extends AppCompatActivity {
             row.put("name", namo);
             row.put("quantity", number);
             int a = -1;
+            Intent ww = new Intent(this, ViewData.class);
             if(fromShowItem == false) { //From MainActivity Just Insert
                 a = (int) db.insert("Data", null, row);
             }else if (fromShowItem == true){ //From ViewData Update
                 //Update Row
                 a = db.update("Data",row,"id = ?",new String[]{i.getString("id")});
+                ww.putExtra("position",postionmark);
             }
 
             if (a > -1) {//code to save the data in the Sqlite database then see it beside other products in a table
                 Toast.makeText(this, "Saved ", Toast.LENGTH_SHORT).show();
-                Intent ww = new Intent(this, ViewData.class);
+
+
                 startActivity(ww);
                 this.finish();
             } else {//if no insert
