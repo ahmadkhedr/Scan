@@ -64,18 +64,18 @@
             android:layout_marginLeft="11dp"
             android:layout_marginStart="11dp"
             android:background="#CCffffff"
-            android:checkedButton="@+id/radioexel">
+            android:checkedButton="@+id/radiotext">
 
-            <RadioButton
-                android:id="@+id/radioexel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:drawableLeft="@drawable/excel"
-                android:drawablePadding="15dp"
-                android:text="@string/Excel"
-                tools:text="@string/Excel" />
-
+            <!--   <RadioButton
+                          android:id="@+id/radioexel"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_weight="1"
+                          android:drawableLeft="@drawable/excel"
+                          android:drawablePadding="15dp"
+                          android:text="@string/Excel"
+                          tools:text="@string/Excel" />
+            -->
             <RadioButton
                 android:id="@+id/radiotext"
                 android:layout_width="wrap_content"
@@ -86,6 +86,6 @@
                 android:text="@string/text"
                 tools:text="@string/text" />
         </RadioGroup>
-    </RelativeLayout>
+              </RelativeLayout>
 
-</android.support.constraint.ConstraintLayout>
+          </android.support.constraint.ConstraintLayout>
