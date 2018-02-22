@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/light3"
+    android:background="@drawable/light2"
     tools:context="kedr.emam.ahmad.scan.Setting">
 
     <TextView
