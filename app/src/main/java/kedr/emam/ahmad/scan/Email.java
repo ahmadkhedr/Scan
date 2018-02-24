@@ -160,7 +160,7 @@ MyHelper myHelper;
         emailIntent .putExtra(Intent.EXTRA_SUBJECT, "Subject");
 
         emailIntent .putExtra(Intent.EXTRA_TEXT, "This mail include an attachment file contains items inventory\n" +
-                "Created by QR / Barcode Reader mobile app");
+                "Created by QR /Barcode Reader mobile app");
         startActivity(Intent.createChooser(emailIntent , "Send email..."));
 
     }
