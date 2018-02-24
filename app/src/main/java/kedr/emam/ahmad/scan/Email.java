@@ -52,7 +52,7 @@ MyHelper myHelper;
     }
 
     public void Convandsend(View view) {
-      /*  if (radioGroup.getCheckedRadioButtonId() == R.id.radioexel) {
+      if (radioGroup.getCheckedRadioButtonId() == R.id.radioexel) {
             //excel
             if (edEmail.getText().toString().isEmpty()) {
 
@@ -63,7 +63,7 @@ MyHelper myHelper;
                     Send("ScanBackup/MyBackUp.csv", edEmail.getText().toString());
                 }
             }
-        }*/
+        }
         if (radioGroup.getCheckedRadioButtonId() == R.id.radiotext) {
 
 

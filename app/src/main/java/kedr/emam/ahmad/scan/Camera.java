@@ -32,7 +32,6 @@ public class Camera extends AppCompatActivity implements ZXingScannerView.Result
         super.onCreate(savedInstanceState);
         scannerView = new ZXingScannerView(this);
         setContentView(scannerView);
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             if (checkPermission()) {
                 Toast.makeText(this, "Premission granted", Toast.LENGTH_LONG).show();

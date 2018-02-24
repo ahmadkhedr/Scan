@@ -60,8 +60,8 @@
             android:layout_marginTop="73dp"
             android:background="#CCffffff"
             android:checkedButton="@+id/radiotext">
-            <!--
-                        <RadioButton
+
+            <RadioButton
                             android:id="@+id/radioexel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
                             android:text="@string/Excel"
                             android:drawablePadding="15dp"
                             tools:text="@string/Excel" />
--->
+
             <RadioButton
                 android:id="@+id/radiotext"
                 android:layout_width="wrap_content"
