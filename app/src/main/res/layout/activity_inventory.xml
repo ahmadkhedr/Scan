@@ -32,10 +32,9 @@
             android:background="@drawable/textviewbackground"
             android:drawableLeft="@drawable/barcode"
             android:fontFamily="casual"
-            android:paddingLeft="5dp"
             android:gravity="center"
             android:hint="@string/barcode_info"
-            android:inputType="number"
+            android:paddingLeft="5dp"
             android:textStyle="bold" />
 
         <EditText
