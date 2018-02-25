@@ -101,18 +101,18 @@ MyHelper myHelper;
             if (rowcount > 0) {
                 c.moveToFirst();
 
-                for (int i = 1; i < colcount; i++) {
-                    if (i != colcount - 1) {
-
-                        bw.write(c.getColumnName(i) + ",");
-
-                    } else {
-
-                        bw.write(c.getColumnName(i));
-
-                    }
-                }
-                bw.newLine();
+//                for (int i = 1; i < colcount; i++) {
+//                    if (i != colcount - 1) {
+//
+//                        bw.write(c.getColumnName(i) + ",");
+//
+//                    } else {
+//
+//                        bw.write(c.getColumnName(i));
+//
+//                    }
+//                }
+//                bw.newLine();
 
                 for (int i = 0; i < rowcount; i++) {
                     c.moveToPosition(i);
@@ -121,7 +121,7 @@ MyHelper myHelper;
                         if (j != colcount - 1)
                             bw.write(c.getString(j) + ",");
                         else
-                            bw.write(c.getString(j));
+                            bw.write(c.getString(j)+",");
                     }
                     bw.newLine();
                 }
