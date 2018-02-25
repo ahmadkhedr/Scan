@@ -58,7 +58,7 @@ MyHelper myHelper;
 
                 Toast.makeText(this, "plz .. Enter your Email first ", Toast.LENGTH_SHORT).show();
             } else {
-                Convert("MyBackUp.csv");
+                Convertexcel("MyBackUp.csv");
                 if (Check == 1) { // if file Export
                     Send("ScanBackup/MyBackUp.csv", edEmail.getText().toString());
                 }
@@ -144,7 +144,71 @@ MyHelper myHelper;
 
 
     }
+    public void Convertexcel(String Filnameandtype ){
 
+
+        try {
+            c = sqldb.rawQuery("select * from Data", null); //Data Name of Table
+            int rowcount = 0;
+            int colcount = 0;
+            File sdCardDir = new File(Environment.getExternalStorageDirectory()+File.separator + "ScanBackup");
+            if (!sdCardDir.exists()) {   ///If these File (ScanBackup) not found you must Creat IT
+                sdCardDir.mkdirs();
+            }
+            String filename = Filnameandtype; // "MyBackUp.csv" or "MyBackUp.txt"
+            // the name of the file to export with
+
+            File saveFile = new File(sdCardDir, filename);
+            FileWriter fw = new FileWriter(saveFile);
+            BufferedWriter bw = new BufferedWriter(fw);
+            rowcount = c.getCount();
+            colcount = c.getColumnCount();
+            if (rowcount > 0) {
+                c.moveToFirst();
+
+                for (int i = 1; i < colcount; i++) {
+                    if (i != colcount - 1) {
+
+                        bw.write(c.getColumnName(i) + ",");
+
+                    } else {
+
+                        bw.write(c.getColumnName(i));
+
+                    }
+                }
+                bw.newLine();
+
+                for (int i = 0; i < rowcount; i++) {
+                    c.moveToPosition(i);
+
+                    for (int j = 1; j < colcount; j++) {
+                        if (j != colcount - 1)
+                            bw.write(c.getString(j) + ",");
+                        else
+                            bw.write(c.getString(j));
+                    }
+                    bw.newLine();
+                }
+                bw.flush();
+
+            }
+            Toast.makeText(this, "Exported Successfully", Toast.LENGTH_SHORT).show();
+            Check=1;
+        } catch (Exception ex) {
+            if (sqldb.isOpen()) {
+                sqldb.close();
+                Toast.makeText(this, "UnExported Successfully", Toast.LENGTH_SHORT).show();
+                Check=0;
+                Toast.makeText(this, ex.getMessage().toString(), Toast.LENGTH_SHORT).show();
+            }
+
+        } finally {
+
+        }
+
+
+    }
     private void Send(String Attach_location,String ToEmail){
 
         File filelocation = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), Attach_location);
