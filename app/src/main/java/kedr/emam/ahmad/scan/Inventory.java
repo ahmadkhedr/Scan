@@ -55,7 +55,7 @@ public class Inventory extends AppCompatActivity {
             row.put("name", namo);
             row.put("quantity", number);
             int a = -1;
-            Intent ww = new Intent(this, ViewData.class);
+            Intent ww = new Intent(this, Inventory.class);
             if(fromShowItem == false) { //From MainActivity Just Insert
                 a = (int) db.insert("Data", null, row);
             }else if (fromShowItem == true){ //From ViewData Update
@@ -87,7 +87,7 @@ public class Inventory extends AppCompatActivity {
     }
 
     public int Checkempty() {
-        if (text.getText().toString().isEmpty() || name.getText().toString().isEmpty() || num.getText().toString().isEmpty()) {
+        if (text.getText().toString().isEmpty()  || num.getText().toString().isEmpty()) {
 
             return 0;
         }

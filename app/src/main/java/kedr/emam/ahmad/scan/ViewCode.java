@@ -48,7 +48,7 @@ public class ViewCode extends AppCompatActivity {
             int a = (int) db.insert("Data", null, row);
             if (a > -1) {//code to save the data in the Sqlite database then see it beside other products in a table
                 Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
-                Intent ww = new Intent(this, ViewData.class);
+                Intent ww = new Intent(this, Camera.class);
                 startActivity(ww);
                 this.finish();
             } else {//if no insert
@@ -97,7 +97,7 @@ public class ViewCode extends AppCompatActivity {
 
 
     public int Checkempty() {
-        if (text.getText().toString().isEmpty() || name.getText().toString().isEmpty() || num.getText().toString().isEmpty()) {
+        if (text.getText().toString().isEmpty() ||  num.getText().toString().isEmpty()) {
 
             return 0;
         }
