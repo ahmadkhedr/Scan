@@ -86,7 +86,7 @@ private SQLiteDatabase db;
 
 for (int i =0; i < code.size(); i++){
 
-     model = new ArrayModel(code.get(i),quantity.get(i));
+     model = new ArrayModel(quantity.get(i),code.get(i));
     adapter.add(model);
 
 

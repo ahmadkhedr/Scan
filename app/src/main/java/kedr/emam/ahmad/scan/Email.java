@@ -71,7 +71,7 @@ MyHelper myHelper;
                 if (Check == 1) { // if file Export
                     Send("ScanBackup/MyBackUp.csv", email);
                 }
-            
+
         }
         if (radioGroup.getCheckedRadioButtonId() == R.id.radiotext) {
 

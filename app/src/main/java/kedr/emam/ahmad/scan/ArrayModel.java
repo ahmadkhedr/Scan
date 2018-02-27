@@ -8,7 +8,7 @@ public class ArrayModel {
   //  public String name;
     public String code;
     public String num;
-    public ArrayModel(String s, String code){
+    public ArrayModel(String num, String code){
 
        // this.name=name;
         this.code=code;
