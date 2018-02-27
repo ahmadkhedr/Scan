@@ -38,7 +38,7 @@ public class ViewData extends AppCompatActivity   {
 private int groupid;
  private myadapter adapter;
     ArrayModel model;
-    private  ArrayList<String> name;
+   //private  ArrayList<String> name;
     private  ArrayList<String> id;
     private ArrayList<String> code;
     private ArrayList<String> quantity;
@@ -58,23 +58,23 @@ private SQLiteDatabase db;
         registerForContextMenu(ListView);
         helper = new MyHelper(ViewData.this);
         db = helper.getWritableDatabase();
-        String[]  ok = {"id","code","name","quantity"};
+        String[]  ok = {"id","quantity","code"};
         pointer = db.query("Data",ok,null,null,null,null,null,null);
        // Toast.makeText(this, "Rows = "+pointer.getCount(), Toast.LENGTH_SHORT).show();
-        name = new ArrayList<String>();
+     //   name = new ArrayList<String>();
         id = new ArrayList<String>();
         code = new ArrayList<String>();
         quantity = new ArrayList<String>();
 
         while( pointer.moveToNext()){
 
-            name.add(pointer.getString(2));
+         //   name.add(pointer.getString(2));
 
             id.add(pointer.getString(0));
 
-            code.add(pointer.getString(1));
+            code.add(pointer.getString(2));
 
-            quantity.add( pointer.getString(3));
+            quantity.add( pointer.getString(1));
 
 
         }
@@ -84,9 +84,9 @@ private SQLiteDatabase db;
 
          adapter = new myadapter(this,adapt);
 
-for (int i =0; i < name.size(); i++){
+for (int i =0; i < code.size(); i++){
 
-     model = new ArrayModel(name.get(i),code.get(i),quantity.get(i));
+     model = new ArrayModel(code.get(i),quantity.get(i));
     adapter.add(model);
 
 
@@ -101,7 +101,7 @@ Bundle ww = getIntent().getExtras();
 if(ww != null){ //selection of list View when edit Your inventory
     positionmark = ww.getInt("position");
     //Toast.makeText(this, ""+positionmark, Toast.LENGTH_SHORT).show();
-    codition = 1;
+    codition = 2;
     ListView.setSelection(positionmark);
 
 }
@@ -122,10 +122,10 @@ if(ww != null){ //selection of list View when edit Your inventory
             // Get the current item from ListVie
 
             LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
-            View v = inflater.inflate(R.layout.customlist, parent, false);
+            @SuppressLint("ViewHolder") View v = inflater.inflate(R.layout.customlist, parent, false);
             ArrayModel model = getItem(position);
-            TextView tvName = (TextView) v.findViewById(R.id.tvName);
-            tvName.setText( model.name);
+           // TextView tvName = (TextView) v.findViewById(R.id.tvName);
+          //  tvName.setText( model.name);
 
             TextView tvcode = (TextView) v.findViewById(R.id.tvcode);
             tvcode.setText( model.code);
@@ -135,7 +135,7 @@ if(ww != null){ //selection of list View when edit Your inventory
 
 
             if( positionmark == position){
-                if(codition==1) {
+                if(codition==2) {
                     RelativeLayout customlist = v.findViewById(R.id.customlistviewlayout);
                     customlist.setBackgroundResource(R.drawable.button_background2);
                 }
@@ -181,7 +181,7 @@ if(ww != null){ //selection of list View when edit Your inventory
 
             Intent A = new Intent(ViewData.this,Inventory.class);
             A.putExtra("id",id.get(index));//Id Of ItemSelected in Database
-            A.putExtra("name",name.get(index));//name Of ItemSelected in Database
+           // A.putExtra("name",name.get(index));//name Of ItemSelected in Database
             A.putExtra("code",code.get(index));//code Of ItemSelected in Database
             A.putExtra("quantity",quantity.get(index));//quantity Of ItemSelected in Database
             A.putExtra("postion",index); //ListView Position Mark عشان وانت راجع تلاقي الليست فيو منورة علي اخر تعديل

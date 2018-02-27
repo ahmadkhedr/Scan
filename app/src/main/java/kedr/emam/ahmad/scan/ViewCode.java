@@ -23,7 +23,7 @@ public class ViewCode extends AppCompatActivity {
         setContentView(R.layout.activity_view_code);
         text =findViewById(R.id.text);
 
-        name =findViewById(R.id.name);
+       // name =findViewById(R.id.name);
         num =findViewById(R.id.num);
         helper = new MyHelper(this);
         db =helper.getWritableDatabase();
@@ -37,12 +37,12 @@ public class ViewCode extends AppCompatActivity {
     public void save(View view) {
         //code to save the data in the Sqlite data base then see it beside other products in a table
         String code = text.getText().toString();
-        String namo = name.getText().toString();
+//        String namo = name.getText().toString();
         String number = num.getText().toString();
 
         ContentValues row = new ContentValues();
         row.put("code",code);
-        row.put("name",namo);
+     //   row.put("name",namo);
         row.put("quantity",number);
         if(Checkempty()==1) {
             int a = (int) db.insert("Data", null, row);
@@ -71,12 +71,12 @@ public class ViewCode extends AppCompatActivity {
 
         //code to save the data in the Sqlite database then see it beside other products in a table
         String code = text.getText().toString();
-        String namo = name.getText().toString();
+       // String namo = name.getText().toString();
         String number = num.getText().toString();
 
         ContentValues row = new ContentValues();
         row.put("code",code);
-        row.put("name",namo);
+       // row.put("name",namo);
         row.put("quantity",number);
         if (Checkempty()== 1) {
         int a = (int) db.insert("Data",null,row);

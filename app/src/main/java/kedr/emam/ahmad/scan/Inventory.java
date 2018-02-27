@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class Inventory extends AppCompatActivity {
 
-    private EditText name,num,text;
+    private EditText num,text;
     private String ok;
     private MyHelper helper;
     private Integer  cc;
@@ -26,7 +26,7 @@ public class Inventory extends AppCompatActivity {
         setContentView(R.layout.activity_inventory);
         text =findViewById(R.id.text);
 
-        name =findViewById(R.id.name);
+       // name =findViewById(R.id.name);
         num =findViewById(R.id.num);
         helper = new MyHelper(this);
         db =helper.getWritableDatabase();
@@ -34,7 +34,7 @@ public class Inventory extends AppCompatActivity {
          i = getIntent().getExtras();
         if(i!=null){
             text.setText(i.getString("code"));
-            name.setText(i.getString("name"));
+           // name.setText(i.getString("name"));
             num.setText(i.getString("quantity"));
             postionmark = i.getInt("postion");
        fromShowItem = true;  //From ViewData
@@ -46,13 +46,13 @@ public class Inventory extends AppCompatActivity {
 
     public void save(View view) {
         String code = text.getText().toString();
-        String namo = name.getText().toString();
+     //   String namo = name.getText().toString();
         String number = num.getText().toString();
 
         if (Checkempty() == 1) {
             ContentValues row = new ContentValues();
             row.put("code", code);
-            row.put("name", namo);
+          //  row.put("name", namo);
             row.put("quantity", number);
             int a = -1;
             Intent ww = new Intent(this, Inventory.class);

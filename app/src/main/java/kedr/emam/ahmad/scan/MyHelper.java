@@ -15,7 +15,7 @@ public class MyHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table Data(id integer primary key autoincrement,name varchar(50),quantity varchar(50) ,code varchar(50))");
+        db.execSQL("create table Data(id integer primary key autoincrement,quantity varchar(50),code varchar(50))");
     }
 
     @Override
