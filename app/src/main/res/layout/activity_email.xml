@@ -21,34 +21,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/edEmail"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/Radiogroup"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="43dp"
-            android:background="@drawable/textviewbackground"
-            android:drawableLeft="@drawable/gmail"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="example@gmail.com"
-            android:paddingLeft="5dp"
-            android:inputType="textEmailAddress"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="85dp"
-            tools:layout_editor_absoluteY="36dp" />
-
         <Button
             android:id="@+id/button"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/Radiogroup"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="29dp"
+            android:layout_marginTop="86dp"
             android:background="@drawable/button_background2"
             android:onClick="Convandsend"
-            android:text="Convert / Send"
+            android:text="Share"
             tools:ignore="OnClick" />
 
         <RadioGroup
@@ -57,19 +39,19 @@
             android:layout_height="150dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="73dp"
+            android:layout_marginTop="129dp"
             android:background="#CCffffff"
             android:checkedButton="@+id/radiotext">
 
             <RadioButton
-                            android:id="@+id/radioexel"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:drawableLeft="@drawable/excel"
-                            android:text="@string/Excel"
-                            android:drawablePadding="15dp"
-                            tools:text="@string/Excel" />
+                android:id="@+id/radioexel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/excel"
+                android:drawablePadding="15dp"
+                android:text="@string/Excel"
+                tools:text="@string/Excel" />
 
             <RadioButton
                 android:id="@+id/radiotext"

@@ -57,37 +57,31 @@ MyHelper myHelper;
         sqldb = myHelper.getWritableDatabase();//you missed this line..
         c = null;
 
-        edEmail = findViewById(R.id.edEmail);
+
         SharedPreferences x = getSharedPreferences("data",MODE_PRIVATE);
         email = x.getString("mail"," ");
-        edEmail.setText(email);
+
     }
 
     public void Convandsend(View view) {
       if (radioGroup.getCheckedRadioButtonId() == R.id.radioexel) {
             //excel
-            if (edEmail.getText().toString().isEmpty()) {
 
-                Toast.makeText(this, "plz .. Enter your Email first ", Toast.LENGTH_SHORT).show();
-            } else {
                 Convertexcel("MyBackUp.csv");
                 if (Check == 1) { // if file Export
-                    Send("ScanBackup/MyBackUp.csv", edEmail.getText().toString());
+                    Send("ScanBackup/MyBackUp.csv", email);
                 }
-            }
+            
         }
         if (radioGroup.getCheckedRadioButtonId() == R.id.radiotext) {
 
 
-            if (edEmail.getText().toString().isEmpty()) {
 
-                Toast.makeText(this, "plz .. Enter your Email first ", Toast.LENGTH_SHORT).show();
-            } else {
                 Convert("MyBackUp.txt");
                 if(Check == 1 ) { // if file Export
-                    Send("ScanBackup/MyBackUp.txt", edEmail.getText().toString());
+                    Send("ScanBackup/MyBackUp.txt", email);
                 }
-            }
+
         }
     }
 
