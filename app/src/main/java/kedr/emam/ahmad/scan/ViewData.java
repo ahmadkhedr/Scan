@@ -54,7 +54,7 @@ private SQLiteDatabase db;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_data);
-        ListView = (ListView) findViewById(R.id.ListView);
+        ListView = findViewById(R.id.ListView);
         registerForContextMenu(ListView);
         helper = new MyHelper(ViewData.this);
         db = helper.getWritableDatabase();
@@ -62,9 +62,9 @@ private SQLiteDatabase db;
         pointer = db.query("Data",ok,null,null,null,null,null,null);
        // Toast.makeText(this, "Rows = "+pointer.getCount(), Toast.LENGTH_SHORT).show();
      //   name = new ArrayList<String>();
-        id = new ArrayList<String>();
-        code = new ArrayList<String>();
-        quantity = new ArrayList<String>();
+        id = new ArrayList<>();
+        code = new ArrayList<>();
+        quantity = new ArrayList<>();
 
         while( pointer.moveToNext()){
 
@@ -80,7 +80,7 @@ private SQLiteDatabase db;
         }
         //last Position in listView  To Select and make Light
 
-        ArrayList<ArrayModel> adapt = new ArrayList<ArrayModel>();
+        ArrayList<ArrayModel> adapt = new ArrayList<>();
 
          adapter = new myadapter(this,adapt);
 
@@ -101,7 +101,7 @@ Bundle ww = getIntent().getExtras();
 if(ww != null){ //selection of list View when edit Your inventory
     positionmark = ww.getInt("position");
     //Toast.makeText(this, ""+positionmark, Toast.LENGTH_SHORT).show();
-    codition = 2;
+    codition = 1;
     ListView.setSelection(positionmark);
 
 }
@@ -111,7 +111,7 @@ if(ww != null){ //selection of list View when edit Your inventory
     }
     public  class myadapter extends ArrayAdapter<ArrayModel> {
 
-        public myadapter(@NonNull Context context, @NonNull ArrayList<ArrayModel> objects) {
+        myadapter(@NonNull Context context, @NonNull ArrayList<ArrayModel> objects) {
             super(context, 0, objects);
         }
 
@@ -122,20 +122,20 @@ if(ww != null){ //selection of list View when edit Your inventory
             // Get the current item from ListVie
 
             LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
-            @SuppressLint("ViewHolder") View v = inflater.inflate(R.layout.customlist, parent, false);
+             View v = inflater.inflate(R.layout.customlist, parent, false);
             ArrayModel model = getItem(position);
            // TextView tvName = (TextView) v.findViewById(R.id.tvName);
           //  tvName.setText( model.name);
 
-            TextView tvcode = (TextView) v.findViewById(R.id.tvcode);
+            TextView tvcode = v.findViewById(R.id.tvcode);
             tvcode.setText( model.code);
 
-            TextView tvnumer = (TextView) v.findViewById(R.id.tvnumer);
+            TextView tvnumer = v.findViewById(R.id.tvnumer);
             tvnumer.setText( model.num);
 
 
             if( positionmark == position){
-                if(codition==2) {
+                if(codition==1) {
                     RelativeLayout customlist = v.findViewById(R.id.customlistviewlayout);
                     customlist.setBackgroundResource(R.drawable.button_background2);
                 }
